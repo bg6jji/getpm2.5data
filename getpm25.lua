@@ -21,9 +21,9 @@
      function toget()
      --HTTP请求头定义
 
-     local ApiKey = "5j1znBVAsnSf5xQyNQyq"     --这个是个共用APIKEY，请换成自己的，没有申请的，请到www.pm25.in申请。API说明请看http://www.pm25.in/api_doc
-     local city = "zhengzhou"                  --获取城市
-     local station_code = "1321A"              --采样点编号
+     local ApiKey = "xxxxxxx"     --这个是个共用APIKEY，请换成自己的，没有申请的，请到www.pm25.in申请。API说明请看http://www.pm25.in/api_doc
+     local city = "xxxx"                  --获取城市
+     local station_code = "xxxx"              --采样点编号
      socket:send("GET /api/querys/aqis_by_station.json?city="..city.."&station_code="..station_code.."&token="..ApiKey.." HTTP/1.1\r\n" ..    --这里只是获取某个监测点的数据
             "Host: www.pm25.in\r\n" ..
             "Accept: */*" ..
