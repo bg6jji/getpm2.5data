@@ -5,7 +5,7 @@
 
     function led(r,g,b) 
     pwm. setduty(6,g)  pwm. setduty(7,b)  pwm. setduty(8,r)  end 
-    led(0, 0, 0) -- led显示红色  led(0, 0, 512) -- led显示蓝色
+    led(0, 0, 0) -- led关闭显示
 
     print("开始内存:"..node.heap())
     tmr.alarm(0, 30000, 1, function()   --请将抓取时间改大一些，减少服务器负载。
@@ -45,7 +45,7 @@
           local time1=string.sub(Aqijson,(Tm+13),(Tm+32))
           print("综合:"..aqidata.."PM2.5:"..pm25.."监测点:"..pn.."监测时间:"..time1)
           
-          led(tonumber(aqidata), tonumber(pm25), 0)
+          led(tonumber(aqidata), tonumber(pm25), 0)  --LED按数值点亮，越亮污染越重
 
           print(node.heap())
       end
